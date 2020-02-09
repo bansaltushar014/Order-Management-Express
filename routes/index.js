@@ -18,7 +18,7 @@ router.post('/signup',
   function (req, res) {
     //res.redirect('/');
     console.log("confirmed");
-    res.send("success");
+    res.redirect('/order');
   });
 
 router.post('/signin',
@@ -54,6 +54,7 @@ router.get('/loggedin', isLoggedIn, function (req, res, next) {
 })
 
 router.get('/order', isLoggedIn, function (req, res, next) {
+  // router.get('/order', function (req, res, next) {
   // console.log(Models.order.find());
 
   Models.order.find({}, function (err, result) {
@@ -73,7 +74,8 @@ router.post('/logout', isLoggedIn, function (req, res, next) {
 });
 
 
-router.post('/postOrder', isLoggedIn, function (req, res, next) {
+// router.post('/postOrder', isLoggedIn, function (req, res, next) {
+  router.post('/postOrder', function (req, res, next) {
 
   var newuser = new Models.order();
 

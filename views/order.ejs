@@ -1,60 +1,43 @@
-<html lang="en">
+<html lang="en" ng-app='orderManagement'>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- Angular cdn -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.min.js"></script>
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="/app.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- UI router cdn -->
+    <script src = "https://unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
     <title>Order</title>
 </head>
-<body>
+
+<body >
     <form action="/logout" method="POST">
         <input type="submit" value="Logout">
     </form>
-    
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-
-
-    <form action="/postOrder" method="POST">
-        <div class="form-group">
-            <label for="exampleInputDate">Order Due Date</label>
-            <input type="date" name="orderDueDate" class="form-control" id="exampleInputDate" aria-describedby="emailHelp"
-                placeholder="Date">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputBuyer">Customer buyer Name</label>
-            <input type="text" name="customerBuyerName" class="form-control" id="exampleInputBuyer" placeholder="Buyer Name">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputAddress">Customer Address</label>
-            <input type="text" name="customerAddress" class="form-control" id="exampleInputAddress" placeholder="Address">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPhone">Customer Phone</label>
-            <input type="text" name="customerPhone" class="form-control" id="exampleInputPhone" placeholder="Phone">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputOrderTotal">Order Total</label>
-            <input type="text" name="orderTotal" class="form-control" id="exampleInputOrderTotal" placeholder="Total">
-        </div>
-        <div class="form-group form-check">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-
-        </div>
-        <div class="col"></div>
-    </div>
+        <a href="#!/order">Order</a>
+        <a href="#!/addOrder">AddOrder</a>
+        <br><br>
+    <div ui-view></div>
 </body>
+
 </html>

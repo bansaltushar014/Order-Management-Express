@@ -1,0 +1,33 @@
+
+
+<div class="d-flex justify-content-center" ng-controller="orderListCtrl">
+    <table class="table table-dark" style="width:90%">
+        <tr>
+            <th> Order Number </th>
+            <th> Order Due Date </th>
+            <th> Customer Buyer Name</th>
+            <th> Customer Address </th>
+            <th> Customer Phone </th>
+            <th> Order Total </th>
+            <th> Edit </th>
+            <th> Delete </th>
+        </tr>
+        <tr  ng-repeat="item in data.order" >
+          <th class="align-middle">{{ item.orderNumber}}</th>
+          <th class="align-middle">{{ item.orderDueDate}}</th>
+          <th class="align-middle">{{ item.customerBuyerName}}</th>
+          <th class="align-middle">{{ item.customerAddress}}</th>
+          <th class="align-middle">{{ item.customerPhone}}</th>
+          <th class="align-middle">{{ item.orderTotal}}</th>
+          <th> <button type="button" ng-click="Edit()" class="btn btn-info">Edit</button></th>
+          <th> <button type="button" ng-click="Delete($index)"   class="btn btn-danger">Delete</button></th>
+          
+        </tr>
+       
+      </table> 
+</div>
+
+<divn ng-controller="ModalCtrl as pc" >
+  <button type="button" class="btn btn-default" ng-click="pc.open()">Try Modal!</button>
+  {{pc.data}}
+</divng-controller="orderListCtrl">
